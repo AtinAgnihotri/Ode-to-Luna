@@ -23,14 +23,14 @@ struct CustomText: View {
 struct ContentView: View {
     // List acts Lazily, creating views when needed while ScrollView creates all the items at once
     var body: some View {
-        ScrollView(.vertical) {
+        NavigationView {
             VStack {
-                ForEach(1..<100) {
-                    CustomText("Item \($0)")
-                        .font(.title)
+                List(0..<100) { row in
+                    NavigationLink(destination: CustomText("Destination: \(row)").navigationBarTitle("Destination \(row)")) {
+                        CustomText("Hello SwiftUI Row \(row)")
+                    }
                 }
-            }
-            .frame(maxWidth: .infinity)
+            }.navigationBarTitle("SwiftUI")
         }
     }
 }
