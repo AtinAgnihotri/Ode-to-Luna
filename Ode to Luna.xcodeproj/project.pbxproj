@@ -19,6 +19,7 @@
 		851D1EBE26764BE00019DD91 /* AstronautModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EBD26764BE00019DD91 /* AstronautModel.swift */; };
 		851D1EC026764C890019DD91 /* BundleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EBF26764C890019DD91 /* BundleDecodable.swift */; };
 		851D1EC526767AC90019DD91 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EC426767AC90019DD91 /* MissionModel.swift */; };
+		851D1EC92676817C0019DD91 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EC82676817C0019DD91 /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		851D1EBD26764BE00019DD91 /* AstronautModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautModel.swift; sourceTree = "<group>"; };
 		851D1EBF26764C890019DD91 /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
 		851D1EC426767AC90019DD91 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
+		851D1EC82676817C0019DD91 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				851D1E8E26762F440019DD91 /* ContentView.swift */,
 				851D1EB726763E0A0019DD91 /* PulsatingMoonView.swift */,
+				851D1EC82676817C0019DD91 /* MissionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851D1EC92676817C0019DD91 /* MissionView.swift in Sources */,
 				851D1E8F26762F440019DD91 /* ContentView.swift in Sources */,
 				851D1EB826763E0A0019DD91 /* PulsatingMoonView.swift in Sources */,
 				851D1EC526767AC90019DD91 /* MissionModel.swift in Sources */,

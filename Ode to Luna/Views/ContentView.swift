@@ -11,15 +11,25 @@ import SwiftUI
 
 struct ContentView: View {
     let astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
+    let missions: [MissionModel] = Bundle.main.decode("missions.json")
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Button ("Decode JSON:  \(astronauts.count)") {
-                    
+            List(missions) { mission in
+                NavigationLink (destination: MissionView(mission),
+                label: {
+                    HStack {
+                        Image(mission.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, height: 100)
+                            .clipped()
+                        Spacer()
+                        Text(mission.displayName).padding()
                     }
-                }.navigationBarTitle("SwiftUI")
-            }
-        
+                })
+            }.navigationBarTitle("Ode to Luna")
+        }
     }
 }
 
