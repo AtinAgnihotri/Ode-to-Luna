@@ -25,10 +25,37 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(0..<100) { row in
-                    NavigationLink(destination: CustomText("Destination: \(row)").navigationBarTitle("Destination \(row)")) {
-                        CustomText("Hello SwiftUI Row \(row)")
+                Button ("Decode JSON") {
+                    let json = """
+                        {
+                            "name": "Commander Shepard",
+                            "address": {
+                                "uri": "ARCTU.SEC3.DA0998ARK",
+                                "street": "DA 099, 8th ARK, Sector 3, Arcturus Station"
+                            }
+                        }
+                        """
+                    
+                    struct User: Codable {
+                        var name: String
+                        var address: Address
                     }
+                    
+                    struct Address: Codable {
+                        var uri: String
+                        var street: String
+                    }
+                    
+                    let data = Data(json.utf8)
+                    let decoder = JSONDecoder()
+                    
+                    if let decodedData = try? decoder.decode(User.self, from: data) {
+                        print(decodedData.name)
+                        print(decodedData.address.uri)
+                        print(decodedData.address.street)
+                    }
+                    
+                            
                 }
             }.navigationBarTitle("SwiftUI")
         }
