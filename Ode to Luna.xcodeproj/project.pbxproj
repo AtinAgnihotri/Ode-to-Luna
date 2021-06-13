@@ -14,6 +14,11 @@
 		851D1E9F26762F4C0019DD91 /* Ode_to_LunaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1E9E26762F4C0019DD91 /* Ode_to_LunaTests.swift */; };
 		851D1EAA26762F4C0019DD91 /* Ode_to_LunaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EA926762F4C0019DD91 /* Ode_to_LunaUITests.swift */; };
 		851D1EB826763E0A0019DD91 /* PulsatingMoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EB726763E0A0019DD91 /* PulsatingMoonView.swift */; };
+		851D1EBB26764B6A0019DD91 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 851D1EB926764B6A0019DD91 /* astronauts.json */; };
+		851D1EBC26764B6A0019DD91 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 851D1EBA26764B6A0019DD91 /* missions.json */; };
+		851D1EBE26764BE00019DD91 /* AstronautModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EBD26764BE00019DD91 /* AstronautModel.swift */; };
+		851D1EC026764C890019DD91 /* BundleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EBF26764C890019DD91 /* BundleDecodable.swift */; };
+		851D1EC526767AC90019DD91 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EC426767AC90019DD91 /* MissionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		851D1EA926762F4C0019DD91 /* Ode_to_LunaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ode_to_LunaUITests.swift; sourceTree = "<group>"; };
 		851D1EAB26762F4C0019DD91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851D1EB726763E0A0019DD91 /* PulsatingMoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsatingMoonView.swift; sourceTree = "<group>"; };
+		851D1EB926764B6A0019DD91 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
+		851D1EBA26764B6A0019DD91 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
+		851D1EBD26764BE00019DD91 /* AstronautModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautModel.swift; sourceTree = "<group>"; };
+		851D1EBF26764C890019DD91 /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
+		851D1EC426767AC90019DD91 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +107,15 @@
 		851D1E8B26762F440019DD91 /* Ode to Luna */ = {
 			isa = PBXGroup;
 			children = (
+				851D1EC226767A7D0019DD91 /* Utils */,
+				851D1EC126767A6C0019DD91 /* Models */,
+				851D1EC326767A870019DD91 /* Views */,
 				851D1E8C26762F440019DD91 /* Ode_to_LunaApp.swift */,
-				851D1E8E26762F440019DD91 /* ContentView.swift */,
 				851D1E9026762F4B0019DD91 /* Assets.xcassets */,
 				851D1E9526762F4B0019DD91 /* Info.plist */,
 				851D1E9226762F4B0019DD91 /* Preview Content */,
-				851D1EB726763E0A0019DD91 /* PulsatingMoonView.swift */,
+				851D1EB926764B6A0019DD91 /* astronauts.json */,
+				851D1EBA26764B6A0019DD91 /* missions.json */,
 			);
 			path = "Ode to Luna";
 			sourceTree = "<group>";
@@ -131,6 +144,32 @@
 				851D1EAB26762F4C0019DD91 /* Info.plist */,
 			);
 			path = "Ode to LunaUITests";
+			sourceTree = "<group>";
+		};
+		851D1EC126767A6C0019DD91 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				851D1EBD26764BE00019DD91 /* AstronautModel.swift */,
+				851D1EC426767AC90019DD91 /* MissionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		851D1EC226767A7D0019DD91 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				851D1EBF26764C890019DD91 /* BundleDecodable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		851D1EC326767A870019DD91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				851D1E8E26762F440019DD91 /* ContentView.swift */,
+				851D1EB726763E0A0019DD91 /* PulsatingMoonView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851D1EBB26764B6A0019DD91 /* astronauts.json in Resources */,
 				851D1E9426762F4B0019DD91 /* Preview Assets.xcassets in Resources */,
+				851D1EBC26764B6A0019DD91 /* missions.json in Resources */,
 				851D1E9126762F4B0019DD91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,7 +305,10 @@
 			files = (
 				851D1E8F26762F440019DD91 /* ContentView.swift in Sources */,
 				851D1EB826763E0A0019DD91 /* PulsatingMoonView.swift in Sources */,
+				851D1EC526767AC90019DD91 /* MissionModel.swift in Sources */,
 				851D1E8D26762F440019DD91 /* Ode_to_LunaApp.swift in Sources */,
+				851D1EBE26764BE00019DD91 /* AstronautModel.swift in Sources */,
+				851D1EC026764C890019DD91 /* BundleDecodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

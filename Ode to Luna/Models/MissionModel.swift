@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct MissionModel: Codable, Identifiable {
+    
+    struct CrewModel: Codable {
+        let name: String
+        let role: String
+    }
+    
+    let id: Int
+    let launchDate: String?
+    let crew: [CrewModel]
+    let description: String
+}
