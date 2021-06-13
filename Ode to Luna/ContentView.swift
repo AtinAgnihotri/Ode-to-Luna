@@ -7,11 +7,31 @@
 
 import SwiftUI
 
-struct ContentView: View {
-
+struct CustomText: View {
+    var text: String
     
     var body: some View {
-        Text("Hello")
+        Text(text)
+    }
+    
+    init(_ text: String) {
+        print("Creating a new Custom Text")
+        self.text = text
+    }
+}
+
+struct ContentView: View {
+    // List acts Lazily, creating views when needed while ScrollView creates all the items at once
+    var body: some View {
+        ScrollView(.vertical) {
+            VStack {
+                ForEach(1..<100) {
+                    CustomText("Item \($0)")
+                        .font(.title)
+                }
+            }
+            .frame(maxWidth: .infinity)
+        }
     }
 }
 
