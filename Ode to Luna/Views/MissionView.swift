@@ -46,7 +46,10 @@ struct MissionView: View {
                 Text(mission.description)
                     .padding()
                 ForEach(self.astronauts, id:\.role) { crewMember in
-                    CrewMemberView(crewMember)
+                    NavigationLink (destination: AstronautView(crewMember.astronaut),
+                    label: {
+                        CrewMemberView(crewMember)
+                    })
                 }
                 
                 Spacer(minLength: 25)
