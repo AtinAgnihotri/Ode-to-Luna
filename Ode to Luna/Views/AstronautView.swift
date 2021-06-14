@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AstronautView: View {
-    let luna : LunaViewModel
+    let luna = LunaViewModel()
     var astronaut: AstronautModel
     var astronautMissions: [MissionModel]
 
     
-    init(_ astronaut: AstronautModel, lunaViewModel: LunaViewModel) {
+    init(_ astronaut: AstronautModel) {
         self.astronaut = astronaut
-        self.luna = lunaViewModel
+//        self.luna = lunaViewModel
         var matches = [MissionModel]()
         
         for i in luna.missions {
@@ -46,9 +46,9 @@ struct AstronautView: View {
                 Section(header: Text("Missions").font(.headline)) {
                     ForEach(self.astronautMissions, id:\.id) { mission in
                         NavigationLink (
-                            destination: MissionView(mission, lunaViewModel: luna),
+                            destination: MissionView(mission),
                             label: {
-                                MissionItemView(mission)
+                                MissionItemView(mission, showDate: true)
                                     .padding()
                             }).buttonStyle(PlainButtonStyle())
                     }
@@ -62,6 +62,6 @@ struct AstronautView_Previews: PreviewProvider {
     static let astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
     static let luna = LunaViewModel()
     static var previews: some View {
-        AstronautView(astronauts[0], lunaViewModel: luna)
+        AstronautView(astronauts[0])
     }
 }

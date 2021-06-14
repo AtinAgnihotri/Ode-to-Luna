@@ -10,26 +10,22 @@ import SwiftUI
 
 
 struct ContentView: View {
-    let astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
-    let missions: [MissionModel] = Bundle.main.decode("missions.json")
+//    let astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
+//    let missions: [MissionModel] = Bundle.main.decode("missions.json")
+    @State private var showDate = true
     
     let luna = LunaViewModel()
     
     var body: some View {
         NavigationView {
             List(luna.missions) { mission in
-                NavigationLink (destination: MissionView(mission, lunaViewModel: luna),
+                NavigationLink (destination: MissionView(mission),
                 label: {
-                        MissionItemView(mission)
+                    MissionItemView(mission, showDate: showDate)
                 })
             }
             .navigationBarTitle("Ode to Luna")
-            .navigationBarItems(trailing: NavigationLink (
-                                    destination: CreditsView(),
-                                    label: {
-                                        Text("Credits")
-                                    }
-                                )
+            .navigationBarItems(trailing: HomeBarButtonsView(text: showDate ? "Date" : "Crew", value: $showDate)
             )
         }
     }

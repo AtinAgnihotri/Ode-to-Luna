@@ -8,24 +8,19 @@
 import SwiftUI
 
 struct MissionView: View {
-//    struct CrewMember {
-//        let role: String
-//        let astronaut: AstronautModel
-//    }
     
-    let luna: LunaViewModel
+    let luna = LunaViewModel()
     var mission: MissionModel
     var astronauts: [CrewMemberModel]
     
     
-    init(_ mission: MissionModel, lunaViewModel: LunaViewModel) {
+    init(_ mission: MissionModel) {
         self.mission = mission
-        self.luna = lunaViewModel
-        
+    
         var matches = [CrewMemberModel]()
         
         for member in mission.crew {
-            if let match = lunaViewModel.astronauts.first(where: { $0.id == member.name }) {
+            if let match = luna.astronauts.first(where: { $0.id == member.name }) {
                 matches.append(CrewMemberModel(role: member.role, astronaut: match))
             } else {
                 fatalError("Missing \(member)")
@@ -52,7 +47,7 @@ struct MissionView: View {
                     .padding()
                 Section(header: Text("Crew").font(.headline)) {
                     ForEach(self.astronauts, id:\.role) { crewMember in
-                        NavigationLink (destination: AstronautView(crewMember.astronaut, lunaViewModel: luna),
+                        NavigationLink (destination: AstronautView(crewMember.astronaut),
                         label: {
                             CrewMemberView(crewMember)
                         }).buttonStyle(PlainButtonStyle())
@@ -76,7 +71,7 @@ struct MissionView_Previews: PreviewProvider {
     
     static var previews: some View {
         MissionView(
-            missions[0], lunaViewModel: luna
+            missions[0]
         ).preferredColorScheme(.dark)
     }
     
