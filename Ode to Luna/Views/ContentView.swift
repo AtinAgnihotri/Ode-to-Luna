@@ -13,10 +13,12 @@ struct ContentView: View {
     let astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
     let missions: [MissionModel] = Bundle.main.decode("missions.json")
     
+    let luna = LunaViewModel()
+    
     var body: some View {
         NavigationView {
-            List(missions) { mission in
-                NavigationLink (destination: MissionView(mission, listOfAstronauts: astronauts),
+            List(luna.missions) { mission in
+                NavigationLink (destination: MissionView(mission, lunaViewModel: luna),
                 label: {
                         MissionItemView(mission)
                 })
@@ -26,7 +28,8 @@ struct ContentView: View {
                                     destination: CreditsView(),
                                     label: {
                                         Text("Credits")
-                                    })
+                                    }
+                                )
             )
         }
     }

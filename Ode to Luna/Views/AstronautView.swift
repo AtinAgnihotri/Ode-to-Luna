@@ -8,10 +8,23 @@
 import SwiftUI
 
 struct AstronautView: View {
+    let luna : LunaViewModel
     var astronaut: AstronautModel
+    var astronautMissions: [MissionModel]
+
     
-    init(_ astronaut: AstronautModel) {
+    init(_ astronaut: AstronautModel, lunaViewModel: LunaViewModel) {
         self.astronaut = astronaut
+        self.luna = lunaViewModel
+        var matches = [MissionModel]()
+        
+        for i in luna.missions {
+            if let match = i.crew.first(where: { $0.name == astronaut.id }) {
+                matches.append(i)
+            }
+        }
+        
+        self.astronautMissions = matches
     }
     
     var body: some View {
@@ -27,12 +40,19 @@ struct AstronautView: View {
                         )
                         
                 }.frame(width: geo.size.width) // Without this image aligns weirdly to leading
-//                Text(astronaut.name)
-//                    .font(.title)
-//                    .padding()
                 
                 Text(astronaut.description)
                     .padding()
+                Section(header: Text("Missions").font(.headline)) {
+                    ForEach(self.astronautMissions, id:\.id) { mission in
+                        NavigationLink (
+                            destination: MissionView(mission, lunaViewModel: luna),
+                            label: {
+                                MissionItemView(mission)
+                                    .padding()
+                            }).buttonStyle(PlainButtonStyle())
+                    }
+                }
             }
         }.navigationBarTitle(astronaut.name, displayMode: .inline)
     }
@@ -40,7 +60,8 @@ struct AstronautView: View {
 
 struct AstronautView_Previews: PreviewProvider {
     static let astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
+    static let luna = LunaViewModel()
     static var previews: some View {
-        AstronautView(astronauts[0])
+        AstronautView(astronauts[0], lunaViewModel: luna)
     }
 }

@@ -13,17 +13,19 @@ struct MissionView: View {
 //        let astronaut: AstronautModel
 //    }
     
+    let luna: LunaViewModel
     var mission: MissionModel
     var astronauts: [CrewMemberModel]
     
     
-    init(_ mission: MissionModel, listOfAstronauts: [AstronautModel]) {
+    init(_ mission: MissionModel, lunaViewModel: LunaViewModel) {
         self.mission = mission
+        self.luna = lunaViewModel
         
         var matches = [CrewMemberModel]()
         
         for member in mission.crew {
-            if let match = listOfAstronauts.first(where: { $0.id == member.name }) {
+            if let match = lunaViewModel.astronauts.first(where: { $0.id == member.name }) {
                 matches.append(CrewMemberModel(role: member.role, astronaut: match))
             } else {
                 fatalError("Missing \(member)")
@@ -43,13 +45,18 @@ struct MissionView: View {
                         .frame(maxWidth: geo.size.width * 0.7)
                         .padding(.top)
                 }.frame(width: geo.size.width) // Without this image aligns weirdly to leading
+                Text("Launch Date: \(mission.formattedDate)")
+                    .font(.headline)
+                    .padding()
                 Text(mission.description)
                     .padding()
-                ForEach(self.astronauts, id:\.role) { crewMember in
-                    NavigationLink (destination: AstronautView(crewMember.astronaut),
-                    label: {
-                        CrewMemberView(crewMember)
-                    })
+                Section(header: Text("Crew").font(.headline)) {
+                    ForEach(self.astronauts, id:\.role) { crewMember in
+                        NavigationLink (destination: AstronautView(crewMember.astronaut, lunaViewModel: luna),
+                        label: {
+                            CrewMemberView(crewMember)
+                        }).buttonStyle(PlainButtonStyle())
+                    }
                 }
                 
                 Spacer(minLength: 25)
@@ -65,11 +72,12 @@ struct MissionView: View {
 struct MissionView_Previews: PreviewProvider {
     static var missions: [MissionModel] = Bundle.main.decode("missions.json")
     static var astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
+    static let luna = LunaViewModel()
     
     static var previews: some View {
         MissionView(
-            missions[0], listOfAstronauts: astronauts
-        )
+            missions[0], lunaViewModel: luna
+        ).preferredColorScheme(.dark)
     }
     
 }
