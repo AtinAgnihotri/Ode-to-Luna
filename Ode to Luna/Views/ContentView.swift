@@ -16,19 +16,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(missions) { mission in
-                NavigationLink (destination: MissionView(mission),
+                NavigationLink (destination: MissionView(mission, listOfAstronauts: astronauts),
                 label: {
-                    HStack {
-                        Image(mission.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100)
-                            .clipped()
-                        Spacer()
-                        Text(mission.displayName).padding()
-                    }
+                        MissionItemView(mission)
                 })
-            }.navigationBarTitle("Ode to Luna")
+            }
+            .navigationBarTitle("Ode to Luna")
+            .navigationBarItems(trailing: NavigationLink (
+                                    destination: CreditsView(),
+                                    label: {
+                                        Text("Credits")
+                                    })
+            )
         }
     }
 }

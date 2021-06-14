@@ -8,48 +8,65 @@
 import SwiftUI
 
 struct MissionView: View {
+//    struct CrewMember {
+//        let role: String
+//        let astronaut: AstronautModel
+//    }
+    
     var mission: MissionModel
-    init(_ mission: MissionModel) {
+    var astronauts: [CrewMemberModel]
+    
+    
+    init(_ mission: MissionModel, listOfAstronauts: [AstronautModel]) {
         self.mission = mission
+        
+        var matches = [CrewMemberModel]()
+        
+        for member in mission.crew {
+            if let match = listOfAstronauts.first(where: { $0.id == member.name }) {
+                matches.append(CrewMemberModel(role: member.role, astronaut: match))
+            } else {
+                fatalError("Missing \(member)")
+            }
+        }
+        
+        self.astronauts = matches
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Image(mission.imageName).resizable()
-                    .frame(width: 200, height: 200)
-                    .aspectRatio(contentMode: .fit)
-                List(0..<mission.crew.count) { crewCount in
-                    HStack {
-                        Text(mission.crew[crewCount].name)
-                        Spacer()
-                        Text(mission.crew[crewCount].role)
-                    }
+        GeometryReader { geo in
+            ScrollView(.vertical) {
+                VStack (alignment: .center) {
+                    Image(mission.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: geo.size.width * 0.7)
+                        .padding(.top)
+                }.frame(width: geo.size.width) // Without this image aligns weirdly to leading
+                Text(mission.description)
+                    .padding()
+                ForEach(self.astronauts, id:\.role) { crewMember in
+                    CrewMemberView(crewMember)
                 }
-                Text(mission.launchDate ?? "").padding()
-                Text(mission.description).padding()
-                Spacer()
-            }.navigationBarTitle(mission.displayName)
-        }
+                
+                Spacer(minLength: 25)
+                
+            }
+        }.navigationBarTitle(mission.displayName, displayMode: .inline)
     }
+    
+    
+    
 }
 
 struct MissionView_Previews: PreviewProvider {
+    static var missions: [MissionModel] = Bundle.main.decode("missions.json")
+    static var astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
+    
     static var previews: some View {
         MissionView(
-            getMission()
+            missions[0], listOfAstronauts: astronauts
         )
     }
     
-    static func getMission() -> MissionModel {
-        MissionModel(id: 1, launchDate: nil, crew: getCrew(), description: "Some Description")
-    }
-    
-    static func getCrew() -> [MissionModel.CrewModel] {
-        [
-            MissionModel.CrewModel(name: "Test Pilot 1", role: "Commander"),
-            MissionModel.CrewModel(name: "Test Pilot 2", role: "Lunar Module Pilot"),
-            MissionModel.CrewModel(name: "Test Pilot 3", role: "Command Module Pilot")
-        ]
-    }
 }

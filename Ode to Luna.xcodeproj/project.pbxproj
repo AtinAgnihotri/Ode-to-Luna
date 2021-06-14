@@ -20,6 +20,11 @@
 		851D1EC026764C890019DD91 /* BundleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EBF26764C890019DD91 /* BundleDecodable.swift */; };
 		851D1EC526767AC90019DD91 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EC426767AC90019DD91 /* MissionModel.swift */; };
 		851D1EC92676817C0019DD91 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851D1EC82676817C0019DD91 /* MissionView.swift */; };
+		858C7C2026770A16001E0C4F /* MissionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C1F26770A16001E0C4F /* MissionItemView.swift */; };
+		858C7C222677BDE8001E0C4F /* CrewMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C212677BDE8001E0C4F /* CrewMemberView.swift */; };
+		858C7C242677BE3E001E0C4F /* CrewMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C232677BE3E001E0C4F /* CrewMemberModel.swift */; };
+		858C7C262677C04A001E0C4F /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C252677C04A001E0C4F /* CreditsView.swift */; };
+		858C7C282677C061001E0C4F /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C272677C061001E0C4F /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		851D1EBF26764C890019DD91 /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
 		851D1EC426767AC90019DD91 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
 		851D1EC82676817C0019DD91 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		858C7C1F26770A16001E0C4F /* MissionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionItemView.swift; sourceTree = "<group>"; };
+		858C7C212677BDE8001E0C4F /* CrewMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberView.swift; sourceTree = "<group>"; };
+		858C7C232677BE3E001E0C4F /* CrewMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberModel.swift; sourceTree = "<group>"; };
+		858C7C252677C04A001E0C4F /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		858C7C272677C061001E0C4F /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +163,7 @@
 			children = (
 				851D1EBD26764BE00019DD91 /* AstronautModel.swift */,
 				851D1EC426767AC90019DD91 /* MissionModel.swift */,
+				858C7C232677BE3E001E0C4F /* CrewMemberModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +182,10 @@
 				851D1E8E26762F440019DD91 /* ContentView.swift */,
 				851D1EB726763E0A0019DD91 /* PulsatingMoonView.swift */,
 				851D1EC82676817C0019DD91 /* MissionView.swift */,
+				858C7C1F26770A16001E0C4F /* MissionItemView.swift */,
+				858C7C212677BDE8001E0C4F /* CrewMemberView.swift */,
+				858C7C252677C04A001E0C4F /* CreditsView.swift */,
+				858C7C272677C061001E0C4F /* AstronautView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,12 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858C7C222677BDE8001E0C4F /* CrewMemberView.swift in Sources */,
+				858C7C262677C04A001E0C4F /* CreditsView.swift in Sources */,
 				851D1EC92676817C0019DD91 /* MissionView.swift in Sources */,
 				851D1E8F26762F440019DD91 /* ContentView.swift in Sources */,
 				851D1EB826763E0A0019DD91 /* PulsatingMoonView.swift in Sources */,
+				858C7C242677BE3E001E0C4F /* CrewMemberModel.swift in Sources */,
 				851D1EC526767AC90019DD91 /* MissionModel.swift in Sources */,
+				858C7C2026770A16001E0C4F /* MissionItemView.swift in Sources */,
 				851D1E8D26762F440019DD91 /* Ode_to_LunaApp.swift in Sources */,
 				851D1EBE26764BE00019DD91 /* AstronautModel.swift in Sources */,
+				858C7C282677C061001E0C4F /* AstronautView.swift in Sources */,
 				851D1EC026764C890019DD91 /* BundleDecodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
