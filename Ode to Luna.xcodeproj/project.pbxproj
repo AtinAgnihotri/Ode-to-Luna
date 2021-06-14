@@ -25,7 +25,6 @@
 		858C7C242677BE3E001E0C4F /* CrewMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C232677BE3E001E0C4F /* CrewMemberModel.swift */; };
 		858C7C262677C04A001E0C4F /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C252677C04A001E0C4F /* CreditsView.swift */; };
 		858C7C282677C061001E0C4F /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C272677C061001E0C4F /* AstronautView.swift */; };
-		858C7C2A2677D1D0001E0C4F /* AstonautMissionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C292677D1D0001E0C4F /* AstonautMissionsModel.swift */; };
 		858C7C2D2677D225001E0C4F /* LunaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C2C2677D225001E0C4F /* LunaViewModel.swift */; };
 		858C7C2F2677DAD4001E0C4F /* HomeBarButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858C7C2E2677DAD4001E0C4F /* HomeBarButtonsView.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +71,6 @@
 		858C7C232677BE3E001E0C4F /* CrewMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewMemberModel.swift; sourceTree = "<group>"; };
 		858C7C252677C04A001E0C4F /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		858C7C272677C061001E0C4F /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
-		858C7C292677D1D0001E0C4F /* AstonautMissionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstonautMissionsModel.swift; sourceTree = "<group>"; };
 		858C7C2C2677D225001E0C4F /* LunaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaViewModel.swift; sourceTree = "<group>"; };
 		858C7C2E2677DAD4001E0C4F /* HomeBarButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBarButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +169,6 @@
 				851D1EBD26764BE00019DD91 /* AstronautModel.swift */,
 				851D1EC426767AC90019DD91 /* MissionModel.swift */,
 				858C7C232677BE3E001E0C4F /* CrewMemberModel.swift */,
-				858C7C292677D1D0001E0C4F /* AstonautMissionsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				858C7C262677C04A001E0C4F /* CreditsView.swift in Sources */,
 				851D1EC92676817C0019DD91 /* MissionView.swift in Sources */,
 				851D1E8F26762F440019DD91 /* ContentView.swift in Sources */,
-				858C7C2A2677D1D0001E0C4F /* AstonautMissionsModel.swift in Sources */,
 				851D1EB826763E0A0019DD91 /* PulsatingMoonView.swift in Sources */,
 				858C7C2D2677D225001E0C4F /* LunaViewModel.swift in Sources */,
 				858C7C242677BE3E001E0C4F /* CrewMemberModel.swift in Sources */,

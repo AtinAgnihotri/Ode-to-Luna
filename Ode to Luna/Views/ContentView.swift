@@ -10,8 +10,6 @@ import SwiftUI
 
 
 struct ContentView: View {
-//    let astronauts: [AstronautModel] = Bundle.main.decode("astronauts.json")
-//    let missions: [MissionModel] = Bundle.main.decode("missions.json")
     @State private var showDate = true
     
     let luna = LunaViewModel()

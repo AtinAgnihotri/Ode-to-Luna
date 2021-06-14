@@ -21,7 +21,6 @@ struct HomeBarButtonsView: View {
             NavigationLink (destination: CreditsView(),
                             label: {
                                 Text("Credits")
-//                                    .overlay(Rectangle().stroke(Color.primary, lineWidth: 4))
                             }
             )
             Button(changeSublineText) {

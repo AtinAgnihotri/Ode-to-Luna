@@ -15,7 +15,6 @@ struct AstronautView: View {
     
     init(_ astronaut: AstronautModel) {
         self.astronaut = astronaut
-//        self.luna = lunaViewModel
         var matches = [MissionModel]()
         
         for i in luna.missions {
